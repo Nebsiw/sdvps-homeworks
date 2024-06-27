@@ -22,7 +22,7 @@ kubectl get po -A
 kubectl get nodes
 ```
 5. Запускаем контейнер
-'kubectl apply -f ./config/redis.yml'
+`kubectl apply -f ./config/redis.yml`
 5. Запускаем Services
 ```
 kubectl expose deployment/redis --port 6379
@@ -34,7 +34,7 @@ kubectl get po -o wide
 ```
 7. Напишите команды kubectl для контейнера из предыдущего задания:
  - выполнения команды ps aux внутри контейнера;
-  'kubectl exec -it deployment/redis -- ps aux'
+  `kubectl exec -it deployment/redis -- ps aux`
  - просмотра логов контейнера за последние 5 минут;
     ```
     kubectl logs deploy/redis
