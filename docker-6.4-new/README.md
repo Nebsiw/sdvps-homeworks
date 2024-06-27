@@ -27,5 +27,5 @@
 ##  Ответ задание 7
 **Выполнение**
 1. [docler-compose.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/compose.yml)
-2. ![docker ps](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2019-46-46.png)
-3. ![grafana](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2020-16-35.png)
+2. Отображение выводы команды docker ps ![docker ps](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2019-46-46.png)
+3. Отображение графика в Grafana, для создания метрики использовался не большой скрипт ![grafana](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2020-16-35.png)
