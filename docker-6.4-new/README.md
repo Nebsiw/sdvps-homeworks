@@ -1,8 +1,5 @@
----
 
 ### Задание 1
-
-**Напишите ответ в свободной форме, не больше одного абзаца текста.**
 
 Установите Docker Compose и опишите, для чего он нужен и как может улучшить вашу жизнь.
 
@@ -29,5 +26,6 @@
 ---
 ##  Ответ задание 7
 **Выполнение**
-1. [docler-compose.yml](/home/user/git-hub/homeworks/sdvps-homeworks/sdvps-homeworks/docker-6.4-new/compose.yml)
-2. 
+1. [docler-compose.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/compose.yml)
+2. ![docker ps](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2019-46-46.png)
+3. ![grafana](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2020-16-35.png)
