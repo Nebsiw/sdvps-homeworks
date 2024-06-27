@@ -5,8 +5,7 @@
 
 ---
 #### Ответ задание 1
-Docker Compose оказывает значительную помощь в разворачивание и конфигируривание контенеров Docker. Помогает избежать ошибок в конфигируции.
-
+Docker Compose оказывает значительную помощь в разворачивание и конфигируривание контенеров Docker. Помогает избежать ошибок в конфигируции.  
 ---
 ### Задание 7 
 
@@ -27,7 +26,7 @@ Docker Compose оказывает значительную помощь в ра�
 **Выполнение**
 1. [docler-compose.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/compose.yml)
 2. Отображение выводы команды docker ps ![docker ps](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2019-46-46.png)
-3. Отображение графика в Grafana, для создания метрики использовался не большой скрипт ![grafana](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2020-16-35.png)
+3. Отображение графика в Grafana, для создания метрики использовался не большой скрипт ![grafana](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/Screenshot%20from%202024-06-27%2020-16-35.png)  
 ---
 ### Задание 8
 
@@ -42,7 +41,7 @@ Docker Compose оказывает значительную помощь в ра�
 ```
 docker rm -v -f $(docker ps -qa)
 ```
-![rm_container](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/rm_container.png)
+![rm_container](https://github.com/Nebsiw/sdvps-homeworks/blob/main/docker-6.4-new/images/rm_container.png)  
 ---
 ### Задание 9* 
 
