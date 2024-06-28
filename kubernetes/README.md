@@ -21,19 +21,24 @@ kubectl version --client
 kubectl get po -A
 kubectl get nodes
 ```
-5. Запускаем контейнер
+5. Меняем конфигируцию redis.yml для запуска redis без пароля. Требуется добавить переменную окружения *ALLOW_EMPTY_PASSWORD*
+```
+- name: ALLOW_EMPTY_PASSWORD
+  value: "yes"
+```
+6. Запускаем контейнер: 
 `kubectl apply -f ./config/redis.yml`
-5. Запускаем Services
+7. Запускаем Services
 ```
 kubectl expose deployment/redis --port 6379
 ```
-6. Проверяем IP и запуск Services
+8. Проверяем IP и запуск Services
 ```
 kubectl get svc
 kubectl get po -o wide
 ```
-7. Напишите команды kubectl для контейнера из предыдущего задания:
- - выполнения команды ps aux внутри контейнера;
+9. Напишите команды kubectl для контейнера из предыдущего задания:
+ - выполнения команды ps aux внутри контейнера: 
   `kubectl exec -it deployment/redis -- ps aux`
  - просмотра логов контейнера за последние 5 минут;
     ```
@@ -41,6 +46,6 @@ kubectl get po -o wide
     kubectl logs --tail 200 deploy/redis
     ```
  - удаления контейнера;
-  'kubectl delete deploy/redis'
+  `kubectl delete deploy/redis`
  - проброса порта локальной машины в контейнер для отладки
-
+  `kubectl port-forward deploy/redis 6379:9100`

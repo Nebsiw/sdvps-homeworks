@@ -15,5 +15,10 @@ spec:
       containers:
       - name: master
         image: bitnami/redis:6.0.13
+        env:
+          - name: ALLOW_EMPTY_PASSWORD
+            value: "yes"
+          - name: REDIS_PASSWORD
+            value: password123
         ports:
         - containerPort: 6379
