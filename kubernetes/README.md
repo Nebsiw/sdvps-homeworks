@@ -1,6 +1,5 @@
 ## Задание 1
-**Скачивание и установка minikube, kubectl**
-1. 
+1. Скачивание и установка minikube, kubectl
 ```text
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
@@ -27,10 +26,13 @@ kubectl get nodes
   value: "yes"
 ```
 6. Запускаем контейнер: 
-`kubectl apply -f ./config/redis.yml`
+```text
+kubectl apply -f ./config/redis.yml
+```
 7. Запускаем Services
 ```
 kubectl expose deployment/redis --port 6379
+kubectl expose deployment/redis --type=NodePort --port=6379
 ```
 8. Проверяем IP и запуск Services
 ```
@@ -39,13 +41,19 @@ kubectl get po -o wide
 ```
 9. Напишите команды kubectl для контейнера из предыдущего задания:
  - выполнения команды ps aux внутри контейнера: 
-  `kubectl exec -it deployment/redis -- ps aux`
+  ```text
+  kubectl exec -it deployment/redis -- ps aux
+  ```
  - просмотра логов контейнера за последние 5 минут;
     ```
     kubectl logs deploy/redis
     kubectl logs --tail 200 deploy/redis
     ```
  - удаления контейнера;
-  `kubectl delete deploy/redis`
+  ```text
+  kubectl delete deploy/redis
+  ```
  - проброса порта локальной машины в контейнер для отладки
-  `kubectl port-forward deploy/redis 6379:9100`
+  ```text
+  kubectl port-forward deploy/redis 6379:6379
+  ```
