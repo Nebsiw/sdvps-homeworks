@@ -33,7 +33,7 @@ kubectl apply -f ./config/redis.yml
 ```
 kubectl expose deployment redis --port 6379 --protocol=TCP --type="NodePort"
 ```
-Либо мы можем создать отдельный манифест с Services 
+Либо мы можем создать отдельный манифест с Services [redis-service.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/redis-service.yml)
 8. Проверяем IP и запуск Services
 ```
 kubectl get svc
@@ -44,11 +44,13 @@ kubectl get po -o wide
   ```text
   kubectl exec -it deployment/redis -- ps aux
   ```
+  ![redis-ps_aux](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/image/redic%20ps%20aux.png)
  - просмотра логов контейнера за последние 5 минут;
     ```
     kubectl logs deploy/redis
     kubectl logs --tail 200 deploy/redis
     ```
+  ![redis_logs](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/image/redis%20log.png)
  - удаления контейнера;
   ```text
   kubectl delete deploy/redis
