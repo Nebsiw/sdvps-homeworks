@@ -33,7 +33,8 @@ kubectl apply -f ./config/redis.yml
 ```
 kubectl expose deployment redis --port 6379 --protocol=TCP --type="NodePort"
 ```
-Либо мы можем создать отдельный манифест с Services [redis-service.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/redis-service.yml)
+Либо мы можем создать отдельный манифест с Services [redis-service.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/redis-service.yml) 
+
 8. Проверяем IP и запуск Services
 ```
 kubectl get svc
