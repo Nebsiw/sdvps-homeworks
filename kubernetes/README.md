@@ -29,11 +29,11 @@ kubectl get nodes
 ```text
 kubectl apply -f ./config/redis.yml
 ```
-7. Запускаем Services
+7. Запускаем Services. Возможно использовать expose:
 ```
-kubectl expose deployment/redis --port 6379
-kubectl expose deployment/redis --type=NodePort --port=6379
+kubectl expose deployment redis --port 6379 --protocol=TCP --type="NodePort"
 ```
+Либо мы можем создать отдельный манифест с Services 
 8. Проверяем IP и запуск Services
 ```
 kubectl get svc
@@ -55,5 +55,5 @@ kubectl get po -o wide
   ```
  - проброса порта локальной машины в контейнер для отладки
   ```text
-  kubectl port-forward deploy/redis 6379:6379
+  kubectl port-forward deploy/redis 30100:6379
   ```

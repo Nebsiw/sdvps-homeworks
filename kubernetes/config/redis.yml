@@ -2,11 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis
+  labels:
+    name: redis
+    app: redis
 spec:
   selector:
     matchLabels:
       app: redis
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -18,7 +21,5 @@ spec:
         env:
           - name: ALLOW_EMPTY_PASSWORD
             value: "yes"
-          - name: REDIS_PASSWORD
-            value: password123
         ports:
         - containerPort: 6379
