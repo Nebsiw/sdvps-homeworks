@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: redis-nginx
   name: nginx
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -19,7 +20,14 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: nginx-conf
+          mountPath: /etc/nginx/conf.d
+          readOnly: true
       volumes:
-      - name: config
-        configMap:
-          name: nginx-conf
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+              - key: nginx.conf
+                path: nginx.conf
