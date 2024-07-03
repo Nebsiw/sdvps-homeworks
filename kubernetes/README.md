@@ -67,3 +67,4 @@ kubectl get po -o wide
   ```
   /etc/nginx/conf.d/
   ```
+  3. Ingress, который будет направлять запросы по префиксу /test на наш сервис [ngix-igress.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/nginx-service.yml)
