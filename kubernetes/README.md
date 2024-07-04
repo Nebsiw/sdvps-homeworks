@@ -63,7 +63,7 @@ kubectl get po -o wide
   ## Выполнение дополнительного задания
   1. Создаем ConfigMap для настройки nginx [config-map-nginx.yml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/config-map-nginx.yml) 
   В нем указываем конфигурацию, которую будет загружать nginx.conf 
-  2. Создаем файл для запуска nginx [nginx.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/nginx.yml) . Настраиваем образ, порт, а также откуда и куда будет монтироваться конфигурация nginx. Путем проб, ошибок и чтения мануалов оказался каталог 
+  2. Создаем файл для запуска nginx [nginx.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes/config/nginx.yml.back) . Настраиваем образ, порт, а также откуда и куда будет монтироваться конфигурация nginx. Путем проб, ошибок и чтения мануалов оказался каталог 
   ```
   /etc/nginx/conf.d/
   ```
