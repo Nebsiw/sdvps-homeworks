@@ -29,8 +29,14 @@
     sudo kubeadm init  \
     --apiserver-advertise-address=[Host_IP] \
     --pod-network-cidr [Netrowkd pod: 10.1.1.1/16] \
-    --apiserver-cert-extra-sans=cluster_ip_address \
-    --control-plane-endpoint=cluster_ip_address
+    --apiserver-cert-extra-sans=cluster_ip_address [Внешний IP адресс кластера] \
+    --control-plane-endpoint=cluster_ip_address [Указываем балансировщик]
+    ```
+    ---
+    ```
+    sudo kubeadm init  \
+    --apiserver-advertise-address=192.168.123.5 \
+    --pod-network-cidr 172.16.0.0/16
     ```
 
 
