@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: redis-nginx
+  labels:
+    name: nginx
+    app: nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:

@@ -12,7 +12,6 @@ data:
         index index.html index.htm;
         server_name _;
         location / {
-          add_header Content-Type text/plain;
-          return 200 'Hello from k8s';
+          index index.html;
           }
           }

@@ -59,6 +59,9 @@ kind: ConfigMap
 metadata:
   namespace: redis-nginx
   name: nginx-conf
+  labels:
+    name: nginx
+    app: nginx
 data:
   nginx.conf: |
     server {
@@ -81,6 +84,7 @@ metadata:
   namespace: redis-nginx
   name: nginx
   labels:
+    name: nginx
     app: nginx
 spec:
   replicas: 1
@@ -111,11 +115,35 @@ spec:
 
 ---
 
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: redis-nginx
+  name: nginx-service
+  labels:
+    name: nginx
+    app: nginx
+spec:
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30080
+  selector:
+    app: nginx
+
+
+---
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: redis-nginx
+  labels:
+    name: nginx
+    app: nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
