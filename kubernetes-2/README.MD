@@ -35,9 +35,30 @@
     ---
     ```
     sudo kubeadm init  \
-    --apiserver-advertise-address=192.168.123.5 \
+    --apiserver-advertise-address=192.168.1.11 \
     --pod-network-cidr 172.16.0.0/16
     ```
+  - Доп информация:
+      - Сброс настроек kubeadm
+      ```
+      kubeadm reset
+      ```
+      - Отключение swap для успешного запуска
+      ```
+      swapoff -a
+      ```
+  - Добавление конфига
+    ```
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    export KUBECONFIG=~/.kube/config
+    ```
 
+    - Данные для подключение к API Server:
+    ```
+    kubeadm join 192.168.1.11:6443 --token rbum49.cnr57aa90sve2u39 \
+	  --discovery-token-ca-cert-hash sha256:7c2b08c918d4480f56e7eae749fbc0b0263c1b7615f73279604d0799a41ecde8
+    ```
 
 
