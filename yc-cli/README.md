@@ -58,13 +58,13 @@ yc vpc subnet create \
     - network-interface - к какой подсети будет подключена машина и протокол
     - zone - в какой зоне создавать VM
     - ssh-key - путь к публичному ssh ключу
-    - platform - используемый процессор [!Описание_платформ](https://yandex.cloud/ru/docs/compute/concepts/vm-platforms)
+    - platform - используемый процессор [Описание платформ](https://yandex.cloud/ru/docs/compute/concepts/vm-platforms)
     - cores  - количество ядер
     - core-fraction - сколько процентов ядра
     - preemptible - прерываемая машина
     - memory - количество ОЗУ
     - create-boot-disk - данные по загрузочному диску, какой образ, объем, тип диска
-    
+
   9. Просмотр информации о VM
   ```
   yc compute instance get vm-netology-1
