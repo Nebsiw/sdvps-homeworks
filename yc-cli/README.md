@@ -53,7 +53,7 @@ yc vpc subnet create \
   --memory 2 \
   --create-boot-disk image-id=fd8lj9ahkhukgg67k57e,size=20,type=network-hdd
   ```
-8. Описание:
+8.1. Описание:
       - name - имя VM
       - hostname - hostname VM
       - network-interface - к какой подсети будет подключена машина и протокол
