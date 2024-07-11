@@ -64,7 +64,7 @@ yc vpc subnet create \
       - core-fraction - сколько процентов ядра
       - preemptible - прерываемая машина
       - memory - количество ОЗУ
-      - create-boot-disk - данные по загрузочному диску, какой образ, объем, тип диска
+      - create-boot-disk - данные по загрузочному диску: образ [image-id](https://yandex.cloud/ru/marketplace/products/yc/ubuntu-20-04-lts), объем `size`(указывается в GB), тип диска `type` (network-hdd, network-ssd)
 10. Просмотр информации о VM
   ```
   yc compute instance get vm-netology-1
