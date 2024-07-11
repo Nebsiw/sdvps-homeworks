@@ -53,7 +53,7 @@ yc vpc subnet create \
   --memory 2 \
   --create-boot-disk image-id=fd8lj9ahkhukgg67k57e,size=20,type=network-hdd
   ```
-8.1. Описание:
+9. Описание:
       - name - имя VM
       - hostname - hostname VM
       - network-interface - к какой подсети будет подключена машина и протокол
@@ -65,18 +65,18 @@ yc vpc subnet create \
       - preemptible - прерываемая машина
       - memory - количество ОЗУ
       - create-boot-disk - данные по загрузочному диску, какой образ, объем, тип диска
-9. Просмотр информации о VM
+10. Просмотр информации о VM
   ```
   yc compute instance get vm-netology-1
   ```
-10. Коннект к VM, поумолчанию создается пользователь `yc-user`
+11. Коннект к VM, поумолчанию создается пользователь `yc-user`
   ```
   ssh yc-user@"PUBLIC_IP"
   ```
-11. Удаление VM подсети и сети
+12. Удаление VM подсети и сети
   ```
   yc compute instance delete vm-netology-1
   yc vpc subnet delete netology-subnet-a
   yc vpc network delete netology
   ```
-12. Для удобства настройки из пункта 8 можно закинуть в скрипт. 
+13. Для удобства настройки из пункта 8 можно закинуть в скрипт. 
