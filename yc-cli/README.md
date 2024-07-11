@@ -53,7 +53,8 @@ yc vpc subnet create \
   --memory 2 \
   --create-boot-disk image-id=fd8lj9ahkhukgg67k57e,size=20,type=network-hdd
   ```
-  ---
+  
+  8. Описание:
       - name - имя VM
       - hostname - hostname VM
       - network-interface - к какой подсети будет подключена машина и протокол
@@ -65,7 +66,7 @@ yc vpc subnet create \
       - preemptible - прерываемая машина
       - memory - количество ОЗУ
       - create-boot-disk - данные по загрузочному диску, какой образ, объем, тип диска
-  ---
+
   9. Просмотр информации о VM
   ```
   yc compute instance get vm-netology-1
