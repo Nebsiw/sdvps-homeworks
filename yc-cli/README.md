@@ -28,17 +28,17 @@ yc vpc subnet create \
   --network-name netology \
   --description "subnet netology"
   ```
-  6. Получить список всех облачных сетей в каталоге, указанном в профиле CLI: 
+6. Получить список всех облачных сетей в каталоге, указанном в профиле CLI: 
   ```
   yc vpc netwrok list
   yc vpc network list --format yaml
   ```
-  7. Добавить ssh ключ в HOME/.ssh: `id_xxxxx.pub id_xxx`. Назначить права на ключи 
+7. Добавить ssh ключ в HOME/.ssh: `id_xxxxx.pub id_xxx`. Назначить права на ключи 
   ```
   chmod 600 id_xxxxx
   chmod 644 id_xxxxx.pub
   ```
-  8. Создание VM
+8. Создание VM
   ```
   yc compute instance create \
   --name vm-netology-1 \
@@ -53,8 +53,7 @@ yc vpc subnet create \
   --memory 2 \
   --create-boot-disk image-id=fd8lj9ahkhukgg67k57e,size=20,type=network-hdd
   ```
-  
-  8. Описание:
+8. Описание:
       - name - имя VM
       - hostname - hostname VM
       - network-interface - к какой подсети будет подключена машина и протокол
@@ -66,19 +65,18 @@ yc vpc subnet create \
       - preemptible - прерываемая машина
       - memory - количество ОЗУ
       - create-boot-disk - данные по загрузочному диску, какой образ, объем, тип диска
-
-  9. Просмотр информации о VM
+9. Просмотр информации о VM
   ```
   yc compute instance get vm-netology-1
   ```
-  10. Коннект к VM, поумолчанию создается пользователь `yc-user`
+10. Коннект к VM, поумолчанию создается пользователь `yc-user`
   ```
   ssh yc-user@"PUBLIC_IP"
   ```
-  11. Удаление VM подсети и сети
+11. Удаление VM подсети и сети
   ```
   yc compute instance delete vm-netology-1
   yc vpc subnet delete netology-subnet-a
   yc vpc network delete netology
   ```
-  12. Для удобства настройки из пункта 8 можно закинуть в скрипт. 
+12. Для удобства настройки из пункта 8 можно закинуть в скрипт. 
