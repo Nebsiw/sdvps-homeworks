@@ -42,15 +42,22 @@ yc vpc subnet create \
   ```
   yc compute instance create \
   --name vm-netology-1 \
+  --hostname vm-netology-1 \
   --network-interface subnet-name=netology-subnet-a,nat-ip-version=ipv4 \
   --zone ru-central1-a \
-  --ssh-key ~/.ssh/id_ed25519.pub
+  --ssh-key ~/.ssh/id_ed25519.pub \
+  --platform standard-v3 \
+  --cores 2 \
+  --core-fraction 20 \
+  --preemptible \
+  --memory 2 \
+  --create-boot-disk image-id=fd8lj9ahkhukgg67k57e,size=20,type=network-hdd
   ```
   9. Просмотр информации о VM
   ```
   yc compute instance get vm-netology-1
   ```
-  10. Коннект к VM
+  10. Коннект к VM, поумолчанию создается пользователь `yc-user`
   ```
   ssh yc-user@"PUBLIC_IP"
   ```
@@ -60,3 +67,4 @@ yc vpc subnet create \
   yc vpc subnet delete netology-subnet-a
   yc vpc network delete netology
   ```
+  12. Для удобства настройки из пункта 8 можно закинуть в скрипт. 
