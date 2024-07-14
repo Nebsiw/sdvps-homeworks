@@ -109,9 +109,9 @@ mychart/
   - templates/*.yaml — те объекты, которые будут загружены при
 установке чарта.
 3. Будем разворачивать Redis
-  1. Deployment [redis-deploy.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/templates/redis-deploy.yaml)
-  2. Service [redis-service.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/templates/redis-service.yaml)
-  3.
+    1. Deployment [redis-deploy.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/templates/redis-deploy.yaml)
+    2. Service [redis-service.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/templates/redis-service.yaml)
+    3.
 4. В файлах конфигурации чарта укажем необходимые параметры:
   - [Chart.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/Chart.yaml)
   - [values.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/values.yaml)
