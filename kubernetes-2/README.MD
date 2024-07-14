@@ -1,4 +1,4 @@
-## Выполнение заданий
+## Выполнение заданий CNI
 1. Создайте свой кластер с помощью kubeadm.
   - Добавляем ключи и репозитории kubeadm
     ```
@@ -61,6 +61,7 @@
 
     - Данные для подключение к API Server:
     ```
+    kubeadm token create --print-join-command
     kubeadm join 10.1.2.21:6443 --token wvydaw.n24pajibew3wc9w3 \
     --discovery-token-ca-cert-hash sha256:4559699a31c808c75dcf49e99cbd92e881ff7751f35f321ebda79d1d83fcaa13
     ```
@@ -75,6 +76,42 @@
 kubectl get nodes
 kubectl get pod -A -o wide
 ```
-4.
+4. Установка CNI плагина Calico для работы с сетью:
+  - На [офицальном сайте](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico-with-kubernetes-api-datastore-50-nodes-or-less) скачиваем манифест, для редактирования локально Calico.
+  ```
+  curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml -O
+  ```
+  - В файле [calico.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/config/kubernetes-2/calico.yaml) требуется расскоментровать параметр в `CALICO_IPV4POOL_CIDR` указав свой pod CIDR
+  - Установить плагин
+  ```
+  kubectl apply -f calico.yaml
+  ```
 
 
+
+
+## Выполнение заданий HELM
+1. Установка HELM
+```
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 |
+bash
+```
+2. Для работы с чартом используется следующая структура директории
+```
+mychart/
+  Chart.yaml
+  values.yaml
+  templates/
+```
+  - Chart.yaml содержит метаданные о самом чарте (название,
+версия, автор и.т.д).
+  - values.yaml — значения для установки по умолчанию.
+  - templates/*.yaml — те объекты, которые будут загружены при
+установке чарта.
+3. Будем разворачивать Redis
+  1. Deployment [redis-deploy.yaml]()
+  2. Service [redis-service.yaml]()
+  3.
+4. В файлах конфигурации чарта укажем необходимые параметры:
+  - [Chart.yaml]()
+  - [values.yaml]()
