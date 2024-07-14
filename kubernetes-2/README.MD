@@ -21,6 +21,9 @@
     # Включает форвардинг пакетов на хосте. Может понадобиться изменить в ручную файл /etc/sysctl.conf, расскоментировать строку: #net.ipv4.ip_forward=1
     echo "net.ipv4.ip_forward=1" >> /etc/systcl.conf
     echo "net.bridge.bridge-nf-call-iptables=1" >> /etc/sysctl.conf
+    Другие варианты:
+    sysctl -w net.ipv4.ip_forward=1
+    nano /etc/sysctl.conf расскоментировать строку net.ipv4.ip_forward=1
     # Применение настроек
     sysctl -p /etc/sysctl.conf
     ```
@@ -35,8 +38,9 @@
     ---
     ```
     sudo kubeadm init  \
-    --apiserver-advertise-address=192.168.1.11 \
-    --pod-network-cidr 172.16.0.0/16
+    --apiserver-advertise-address=10.1.2.21 \
+    --pod-network-cidr 172.16.0.0/16 \
+    --apiserver-cert-extra-sans=158.160.96.120
     ```
   - Доп информация:
       - Сброс настроек kubeadm
@@ -57,8 +61,20 @@
 
     - Данные для подключение к API Server:
     ```
-    kubeadm join 192.168.1.11:6443 --token rbum49.cnr57aa90sve2u39 \
-	  --discovery-token-ca-cert-hash sha256:7c2b08c918d4480f56e7eae749fbc0b0263c1b7615f73279604d0799a41ecde8
+    kubeadm join 10.1.2.21:6443 --token wvydaw.n24pajibew3wc9w3 \
+    --discovery-token-ca-cert-hash sha256:4559699a31c808c75dcf49e99cbd92e881ff7751f35f321ebda79d1d83fcaa13
     ```
+2. Запускаем и настраиваем вторую VM по аналогии с первой до пункта с запуском kudeadm, его запускать не требуется.
+  VM подсоединяем в кластеру с указанием API-servera kubeadm и токена полученого при создание на первой машине.
+  ```
+  kubeadm join 10.1.2.21:6443 --token wvydaw.n24pajibew3wc9w3 \
+    --discovery-token-ca-cert-hash sha256:4559699a31c808c75dcf49e99cbd92e881ff7751f35f321ebda79d1d83fcaa13
+  ```
+3. На 1 VM проверяем подключение nodes, а так же корректный запуск остальных pod
+```
+kubectl get nodes
+kubectl get pod -A -o wide
+```
+4.
 
 
