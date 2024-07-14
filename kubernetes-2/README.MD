@@ -81,7 +81,7 @@ kubectl get pod -A -o wide
   ```
   curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml -O
   ```
-  - В файле [calico.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/config/kubernetes-2/calico.yaml) требуется расскоментровать параметр в `CALICO_IPV4POOL_CIDR` указав свой pod CIDR
+  - В файле [calico.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/config/kubernetes-2/config/calico.yaml) требуется раскоментровать параметр в `CALICO_IPV4POOL_CIDR` указав свой pod CIDR
   - Установить плагин
   ```
   kubectl apply -f calico.yaml
@@ -109,9 +109,9 @@ mychart/
   - templates/*.yaml — те объекты, которые будут загружены при
 установке чарта.
 3. Будем разворачивать Redis
-  1. Deployment [redis-deploy.yaml]()
-  2. Service [redis-service.yaml]()
+  1. Deployment [redis-deploy.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/templates/redis-deploy.yaml)
+  2. Service [redis-service.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/templates/redis-service.yaml)
   3.
 4. В файлах конфигурации чарта укажем необходимые параметры:
-  - [Chart.yaml]()
-  - [values.yaml]()
+  - [Chart.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/Chart.yaml)
+  - [values.yaml](https://github.com/Nebsiw/sdvps-homeworks/blob/main/kubernetes-2/config/charts-redis/values.yaml)
